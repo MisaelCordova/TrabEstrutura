@@ -15,7 +15,7 @@ struct Data{
 	int dia = 8, mes = 7, ano = 2021, idDias;
 };
 struct Emprestimo{
-	Data dtEmp, dtDev, Livro livro;
+	Data dtEmp, dtDev;
 };
 struct User{
 	string nome, endereco, telefone, email, senha, cpf;
@@ -210,6 +210,7 @@ void cadastroEmprestimo(void){
 	cout << "C�digo do livro...: "; cin >> codigoLivro; verificaLivroEmprestimo(codigoLivro);
 	cout << "Senha.: "; cin >> senha; verificaSenhaEmprestimo(codigoUser, senha);
 	cout << "\n------------------------------------------------\n";dataEmprestimo(codigoUser);
+
 	cout << "Data de empr�stimo: " << itu->emprestimo.dtEmp.dia << "/" << itu->emprestimo.dtEmp.mes << "/" << itu->emprestimo.dtEmp.ano << endl; 
 	cout << "Data de devolu��o: " << itu->emprestimo.dtDev.dia << "/" << itu->emprestimo.dtDev.mes << "/" << itu->emprestimo.dtDev.ano << endl;
 	cout << "\n------------------------------------------------\n";
@@ -401,6 +402,7 @@ void dataEmprestimo(int a){
 	
 	while(i < 7){
 		passaDia();
+		i++;
 	}
 	
 	itu->emprestimo.dtDev.dia = data.dia;
